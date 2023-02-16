@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const { expressjwt } = require('express-jwt');
 const cors = require('cors');
@@ -12,7 +11,6 @@ const MONGO_URI = process.env.MONGO_URI;
 // Middleware
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());
-app.use(cookieParser())
 app.use(morgan('dev'));
 
 // Connect to DB
